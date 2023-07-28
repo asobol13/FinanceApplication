@@ -15,8 +15,8 @@ follow steps at https://www.electronforge.io/import-existing-project
 ## Squirrel Windows Boilerplate
 npm install electron-squirrel-startup
 
-in main.js
-if (require('electron-squirrel-startup')) app.quit();
+<!-- in main.js
+if (require('electron-squirrel-startup')) app.quit(); -->
 
 ## React
 npm install react react-dom
@@ -24,4 +24,4 @@ npm install react react-dom
 ## React three fiber
 npm install three @types/three @react-three/fiber
 
-## WebGL# FinanceApplication
+## WebGL
