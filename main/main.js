@@ -7,6 +7,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: true,
     webPreferences: {
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js'),
@@ -35,3 +36,27 @@ app.on('window-all-closed', () => {
   });
 
   app.setAppUserModelId("Smart Earning ;)");
+
+// Custom functions for minimize, maximize, and close buttons
+function minimizeWindow() {
+  mainWindow.minimize();
+}
+
+function maximizeWindow() {
+  if (mainWindow.isMaximized()) {
+    mainWindow.restore();
+  } else {
+    mainWindow.maximize();
+  }
+}
+
+function closeWindow() {
+  app.quit();
+}
+
+// Export the functions to be used in the renderer process
+module.exports = {
+  minimizeWindow,
+  maximizeWindow,
+  closeWindow,
+};
